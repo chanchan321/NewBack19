@@ -320,7 +320,7 @@ cron.schedule("00 00 06 * * *", async function(){
      app.post('/upload/:lrn/:arr',
          fileUpload({ createParentPath: true }),
          filesPayloadExists,
-         fileExtLimiter(['.png', '.jpg', '.jpeg', '.xlsx']),
+         fileExtLimiter(['.png', '.jpg', '.jpeg']),
          fileSizeLimiter,
          (req, res) => {
              const files = req.files
@@ -390,12 +390,18 @@ cron.schedule("00 00 06 * * *", async function(){
              
           
                function deletess()  {
-                  var del = mysql.createConnection({
-                          host: "localhost",
-                          user: "root",
-                          password: "",
-                          database: "dbtesting"
-                      });
+                       var del = mysql.createConnection({
+                            host:'db4free.net',
+                            user:'capstone357',
+                            password:'CAPSTONEguidance123',
+                            database:'dbtesting357'
+                        });
+                  // var del = mysql.createConnection({
+                  //         host: "localhost",
+                  //         user: "root",
+                  //         password: "",
+                  //         database: "dbtesting"
+                  //     });
                   del.connect(function(err) {
                   if (err) throw err;
                   var sql = "DROP DATABASE dbtesting";
@@ -409,12 +415,17 @@ cron.schedule("00 00 06 * * *", async function(){
           
                 
                 function createzz() {
-          
-                      var cre = mysql.createConnection({
-                              host: "localhost",
-                              user: "root",
-                              password: ""
-                          });
+                        var cre = mysql.createConnection({
+                            host:'db4free.net',
+                            user:'capstone357',
+                            password:'CAPSTONEguidance123'
+                        });
+                                
+                      // var cre = mysql.createConnection({
+                      //         host: "localhost",
+                      //         user: "root",
+                      //         password: ""
+                      //     });
           
                   cre.connect(function(err) {
                   if (err) throw err;
@@ -434,9 +445,9 @@ cron.schedule("00 00 06 * * *", async function(){
             
               function importz() {
           
-                    const host = 'localhost';
-                      const user = 'root';
-                      const password = '';
+                    const host = 'db4free.net';
+                      const user = 'capstone357';
+                      const password = 'CAPSTONEguidance123';
                       const database = 'dbtesting';
                       
                       const importer = new Importer({host, user, password, database});
