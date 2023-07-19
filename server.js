@@ -23,10 +23,10 @@ const fs = require('fs')
 
 require("dotenv").config();
 
-
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors(corsOptions));
+
 app.use('/register', require('./routes/register'));
 app.use('/login', require('./routes/login'));
 app.use('/pis', require('./routes/pis'));
