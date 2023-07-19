@@ -9,7 +9,8 @@ const getAppointmentReq = async (req, res) => {
 
         const sqlgetApp= "SELECT * FROM appointmentRequestList WHERE studLrn = ?";
         db.query(sqlgetApp,[lrn],(err,result)=>{
-                //  console.log(result)
+                 console.log(result)
+            console.log(err)
                 if(result[0] === undefined) return res.sendStatus(204)
                 // res.send(result[0])
                 // res.send(result)
