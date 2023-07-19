@@ -8,7 +8,7 @@ const config = {
         "Access-Control-Allow-Origin": "https://newfront19.onrender.com",
         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         "Access-Control-Request-Headers": "*",
-        "Access-Control-Allow-Headers: Accept"
+        "Access-Control-Allow-Headers": "Accept"
         }
   };
 
