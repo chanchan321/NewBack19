@@ -7,7 +7,7 @@ const getAppointmentReq = async (req, res) => {
 
     const lrn = req.params.lrn;
 
-        const sqlgetApp= "SELECT * FROM appointmentrequestList WHERE studLrn = ?";
+        const sqlgetApp= "SELECT * FROM appointmentrequestlist WHERE studLrn = ?";
         db.query(sqlgetApp,[lrn],(err,result)=>{
                  console.log(result)
             console.log(err)
