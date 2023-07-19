@@ -5,8 +5,8 @@ const whitelist = [
 
 const config = {
     headers: {
-        "Access-Control-Allow-Origin": '*'
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"https://github.com/chanchan321/NewBack19/blob/main/config/corsOptions.js
+        "Access-Control-Allow-Origin": 'https://newfront19.onrender.com','https://newfront19.onrender.com/'
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
         }
   };
 
