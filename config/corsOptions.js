@@ -1,5 +1,5 @@
 const whitelist = [
-    '*'
+    'https://newfront19.onrender.com'
 
 ];
 
@@ -11,16 +11,16 @@ const config = {
   };
 
 const corsOptions = {
-    // origin: (origin, callback) => {
-    //     if (whitelist.indexOf(origin) !== -1) {
-    //         callback(null, true)
-    //     } else {
-    //         callback(new Error('Not allowed by CORSs'));
-    //     }
-    // },
-    config,
+    origin: (origin, callback) => {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORSs'));
+        }
+    },
+    // config,
     credentials: true,
-    // optionsSuccessStatus: 200
+    optionsSuccessStatus: 200
 }
 
 module.exports = corsOptions;
