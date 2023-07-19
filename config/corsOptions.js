@@ -19,7 +19,7 @@ const corsOptions = {
     //     }
     // },
     config,
-    // credentials: true,
+    credentials: true,
     // optionsSuccessStatus: 200
 }
 
