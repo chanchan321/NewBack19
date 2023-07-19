@@ -33,7 +33,7 @@ const addAppointmentReq = async (req, res) => {
     const content = req.body.content;
     const lrn = req.body.lrn;
         //    (content.dateRequested)
-                const sqladdAppointment= `INSERT INTO appointmentRequestList (requestID,dateOfRequest, studLrn, timeRequested, dateRequested, reason, status, reschedTime, reschedDate , response, eventID) VALUES (?,?,?,?,?,?,?,?,?,?,?);`
+                const sqladdAppointment= `INSERT INTO appointmentrequestlist (requestID,dateOfRequest, studLrn, timeRequested, dateRequested, reason, status, reschedTime, reschedDate , response, eventID) VALUES (?,?,?,?,?,?,?,?,?,?,?);`
 
                 db.query(sqladdAppointment,[reqID, content.dateOfRequest, lrn, JSON.stringify(content.timeRequested), content.dateRequested, content.reason, content.status, null, null, null, null], (err,result)=>{
                      res.send(result);
@@ -45,7 +45,7 @@ const addAppointmentReq = async (req, res) => {
     const editAppointmentReq = async (req, res) => {
         const {content, date, request, message} = req.body
         if(request === 'cancel'){
-                    const sqlUpdateAppointment= `UPDATE appointmentRequestList SET status = ? WHERE requestID = ?;`
+                    const sqlUpdateAppointment= `UPDATE appointmentrequestlist SET status = ? WHERE requestID = ?;`
                     db.query(sqlUpdateAppointment,['canceled', content.requestID], (err,result)=>{
                         if(err) return res.sendStatus(500)
                         if(content.status === 'pending') return res.sendStatus(200) 
@@ -64,7 +64,7 @@ const addAppointmentReq = async (req, res) => {
         
         }else
             if(request === 'suggest'){
-                const sqlUpdateAppointment= `UPDATE appointmentRequestList SET timeRequested = ?, dateRequested = ?, reschedTime = ?, reschedDate = ?, response = ? WHERE requestID = ?;`
+                const sqlUpdateAppointment= `UPDATE appointmentrequestlist SET timeRequested = ?, dateRequested = ?, reschedTime = ?, reschedDate = ?, response = ? WHERE requestID = ?;`
 
                 db.query(sqlUpdateAppointment,[JSON.stringify(content.time), date, JSON.stringify(content.time), date, message, content.event.requestID], (err,result)=>{
                     if(err) return res.sendStatus(500)
