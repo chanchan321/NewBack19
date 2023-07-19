@@ -1,5 +1,5 @@
 const whitelist = [
-    'https://newfront19.onrender.com'
+    'https://newfront19.onrender.com','*'
 
 ];
 
