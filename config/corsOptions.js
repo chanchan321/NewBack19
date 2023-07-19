@@ -5,8 +5,9 @@ const whitelist = [
 
 const config = {
     headers: {
-        "Access-Control-Allow-Origin": 'https://newfront19.onrender.com','https://newfront19.onrender.com/'
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Origin": "*"
         }
   };
 
