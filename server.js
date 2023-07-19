@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
+app.use(cors(corsOptions));
 const PORT = 3500;
 const db = require('./middleware/myDB');
 const cron = require('node-cron')
@@ -22,7 +23,7 @@ const fs = require('fs')
 
 require("dotenv").config();
 
-app.use(cors(corsOptions));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/register', require('./routes/register'));
