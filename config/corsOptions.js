@@ -1,5 +1,5 @@
 const whitelist = [
-    'https://newfront19.onrender.com','*'
+    '*'
 
 ];
 
@@ -19,8 +19,8 @@ const corsOptions = {
         }
     },
     config,
-    credentials: true,
-    optionsSuccessStatus: 200
+    // credentials: true,
+    // optionsSuccessStatus: 200
 }
 
 module.exports = corsOptions;
