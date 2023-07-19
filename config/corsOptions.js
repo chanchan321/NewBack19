@@ -20,7 +20,12 @@ const corsOptions = {
     //         callback(new Error('Not allowed by CORSs'));
     //     }
     // },
-    config,
+    headers: {
+        "Access-Control-Allow-Origin": "https://newfront19.onrender.com",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        "Access-Control-Request-Headers": "*",
+        "Access-Control-Allow-Headers": "Accept"
+        },
     credentials: true,
     optionsSuccessStatus: 200
 }
