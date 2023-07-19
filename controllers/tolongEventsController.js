@@ -7,6 +7,7 @@ const getlongEvents = async (req, res) => {
             const sqlgetApp= "SELECT * FROM longevents";
             db.query(sqlgetApp,(err,result)=>{
                 if(err) return res.sendStatus(500)
+                        console.log(err)
                 res.send(result)
         })
   
